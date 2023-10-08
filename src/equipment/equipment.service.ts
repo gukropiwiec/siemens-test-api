@@ -19,8 +19,8 @@ export class EquipmentService {
     return this.equipmentModel.find().exec();
   }
 
-  async findOne(id: string): Promise<Equipment> {
-    return this.equipmentModel.findOne({ _id: id }).exec();
+  async findOne(serialNumber: number): Promise<Equipment> {
+    return this.equipmentModel.findOne({ serialNumber }).exec();
   }
 
   update(id: string, updateEquipmentDto: UpdateEquipmentDto) {

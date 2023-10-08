@@ -26,9 +26,9 @@ export class EquipmentController {
     return this.equipmentService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.equipmentService.findOne(id);
+  @Get(':serialNumber')
+  findOne(@Param('serialNumber') serialNumber: number) {
+    return this.equipmentService.findOne(serialNumber);
   }
 
   @Patch(':id')
