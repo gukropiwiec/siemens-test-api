@@ -1,5 +1,14 @@
+import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { Point } from '../entities/equipment.entities';
+
 export class CreateEquipmentDto {
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(100)
   readonly name: string;
-  readonly serialNumber: string;
-  readonly points: any[];
+
+  @IsNotEmpty()
+  readonly serialNumber: number;
+
+  readonly points: Point[];
 }

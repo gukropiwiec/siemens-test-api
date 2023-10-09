@@ -4,12 +4,14 @@ import { Point, PointSchema } from './point.schema';
 
 export type EquipmentDocument = HydratedDocument<Equipment>;
 
-@Schema()
+@Schema({
+  timestamps: { createdAt: 'created', updatedAt: 'updated' },
+})
 export class Equipment {
-  @Prop()
+  @Prop({ required: true })
   name: string;
 
-  @Prop()
+  @Prop({ required: true })
   serialNumber: number;
 
   @Prop([{ type: PointSchema }])
