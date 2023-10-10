@@ -15,7 +15,7 @@ export class Equipment {
   serialNumber: number;
 
   @Prop([{ type: PointSchema }])
-  points: Point[];
+  points?: Point[];
 }
 
 export const EquipmentSchema = SchemaFactory.createForClass(Equipment);

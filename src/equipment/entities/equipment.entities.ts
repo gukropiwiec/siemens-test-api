@@ -1,6 +1,6 @@
 export class Equipment {
   name: string;
-  serialNumber: string;
+  serialNumber: number;
   points?: Point[];
 }
 

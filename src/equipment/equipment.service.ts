@@ -2,24 +2,27 @@ import { Injectable } from '@nestjs/common';
 import { CreateEquipmentDto } from './dto/create-equipment.dto';
 import { UpdateEquipmentDto } from './dto/update-equipment.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Equipment } from 'src/schemas/equipment.schema';
+import { Equipment, EquipmentDocument } from '../schemas/equipment.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
 export class EquipmentService {
   constructor(
-    @InjectModel(Equipment.name) private equipmentModel: Model<Equipment>,
+    @InjectModel(Equipment.name)
+    private readonly equipmentModel: Model<EquipmentDocument>,
   ) {}
 
-  async create(createEquipmentDto: CreateEquipmentDto): Promise<Equipment> {
+  async create(
+    createEquipmentDto: CreateEquipmentDto,
+  ): Promise<EquipmentDocument> {
     return this.equipmentModel.create(createEquipmentDto);
   }
 
-  async findAll(): Promise<Equipment[]> {
+  async findAll(): Promise<EquipmentDocument[]> {
     return this.equipmentModel.find().exec();
   }
 
-  async findOne(serialNumber: number): Promise<Equipment> {
+  async findOne(serialNumber: number): Promise<EquipmentDocument> {
     return this.equipmentModel.findOne({ serialNumber }).exec();
   }
 

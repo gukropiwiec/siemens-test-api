@@ -8,7 +8,6 @@ import {
   Patch,
 } from '@nestjs/common';
 import { EquipmentService } from './equipment.service';
-import { Equipment } from 'src/schemas/equipment.schema';
 import { CreateEquipmentDto } from './dto/create-equipment.dto';
 import { UpdateEquipmentDto } from './dto/update-equipment.dto';
 
@@ -22,7 +21,7 @@ export class EquipmentController {
   }
 
   @Get()
-  findAll(): Promise<Equipment[]> {
+  findAll() {
     return this.equipmentService.findAll();
   }
 
