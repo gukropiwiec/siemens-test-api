@@ -46,10 +46,13 @@ OR
 $ npm run start:dev
 ```
 
-
-
 ## Test
 
 ```bash
 $ npm run test:e2e
+```
+
+## Documentation
+```bash
+$ npm start:doc
 ```
